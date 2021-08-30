@@ -7,9 +7,11 @@ type PageContainerProps = {
 
 const PageContainer = ({ left, right }: PageContainerProps) => {
   return (
-    <section className="row page-container">
-      <div className="col-3">{left}</div>
-      <div className="col">{right}</div>
+    <section className="page-container overflow-hidden">
+      <div className="row">
+        <div className="col-2">{left}</div>
+        <div className="col">{right}</div>
+      </div>
     </section>
   );
 };
