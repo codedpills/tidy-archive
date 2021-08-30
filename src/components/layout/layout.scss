@@ -1,23 +1,20 @@
-@import '../../styles/variables';
-
-.page-container {
-    --bs-gutter-x: 0rem !important;
-}
+@import "../../styles/variables";
 
 .title-bar {
-    background-color: #fff;
+  background-color: #fff;
+  padding: 0 $spacing-large;
 
-    .title-bar__heading {
-        padding: $spacing-xlarge 0;
-        h2 {
-            color: $custom-text-black;
-            font-weight: 700;
-        }
+  .title-bar__heading {
+    padding: $spacing-xlarge 0;
+    h2 {
+      color: $custom-text-black;
+      font-weight: 700;
     }
+  }
 }
 
 .main-area__content {
-    background-color: $custom-grey-light;
-    padding-top: $spacing-xlarge;
-    padding-bottom: $spacing-xxxlarge;
+  min-height: 80vh;
+  background-color: $custom-grey-light;
+  padding: $spacing-xlarge $spacing-large $spacing-xxxlarge $spacing-large;
 }
