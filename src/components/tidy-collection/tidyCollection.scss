@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+
+.tidy-collection-list__item {
+    margin: $spacing-medium 0;
+}
+
+.tidy-collection-item {
+  margin: $spacing-small 0;
+
+  .collection-icon {
+    font-size: 40px;
+    color: $custom-primary-blue;
+  }
+  span.collection-tag {
+    display: block;
+    font-size: 12px;
+    color: $custom-text-grey-base;
+  }
+  span.collection-title {
+    display: block;
+    font-size: 18px;
+    color: $custom-primary-blue;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
