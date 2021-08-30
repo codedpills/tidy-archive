@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+.letter-link {
+  list-style: none;
+  margin-right: $spacing-small;
+
+  a {
+    color: $custom-text-grey-dark;
+    font-size: 16px;
+
+    &:hover {
+      color: $custom-text-grey-dark;
+    }
+  }
+
+  .letter-border {
+    width: 16px;
+    height: 4px;
+  }
+  .letter-border-hover {
+    border: 1px solid $custom-primary-blue;
+  }
+  .letter-border-active {
+    background-color: $custom-primary-blue;
+  }
+  .letter-border-default {
+    background-color: #fff;
+  }
+}
