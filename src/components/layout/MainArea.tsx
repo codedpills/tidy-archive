@@ -3,7 +3,7 @@ import Titlebar from "./Titlebar"
 const MainArea = () => {
     return (
         <main className="main-area">
-            <Titlebar heading="Archive">
+            <Titlebar title="Archive">
                 Alphabet sorting thing
             </Titlebar>
             <div className="main-area__content">

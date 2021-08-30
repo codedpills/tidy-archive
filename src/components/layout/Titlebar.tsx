@@ -1,13 +1,13 @@
 type TitlebarProps = {
   children: React.ReactNode;
-  heading: string;
+  title: string;
 };
 
-const Titlebar = ({ heading = "Heading", children }: TitlebarProps) => {
+const Titlebar = ({ title = "Heading", children }: TitlebarProps) => {
   return (
     <div className="title-bar">
       <div className="title-bar__heading">
-        <h2>{heading}</h2>
+        <h2>{title}</h2>
       </div>
       {children}
     </div>
