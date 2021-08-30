@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.page-container {
+    --bs-gutter-x: 0rem !important;
+}
+
+.title-bar {
+    background-color: #fff;
+
+    .title-bar__heading {
+        padding: $spacing-xlarge 0;
+        h2 {
+            color: $custom-text-black;
+            font-weight: 700;
+        }
+    }
+}
+
+.main-area__content {
+    background-color: $custom-grey-light;
+    padding-top: $spacing-xlarge;
+    padding-bottom: $spacing-xxxlarge;
+}
