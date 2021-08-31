@@ -5,8 +5,8 @@ import "./tidyCollection.scss";
 const TidyCollectionList = () => {
   return (
     <div className="tidy-collection-list">
-      <div className="tidy-collection-list__item overflow-hidden">
-        <h5>A</h5>
+      <div className="tidy-collection-list__item">
+        <h5 className="list-order-tag">A</h5>
         <div className="row row-cols-md-3">
           <div className="col">
             <TidyCollectionItem

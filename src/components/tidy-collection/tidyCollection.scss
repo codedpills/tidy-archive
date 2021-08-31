@@ -1,7 +1,11 @@
 @import "../../styles/variables";
 
 .tidy-collection-list__item {
-    margin: $spacing-medium 0;
+  margin: $spacing-medium 0;
+
+  .list-order-tag {
+    font-size: 16px;
+  }
 }
 
 .tidy-collection-item {
