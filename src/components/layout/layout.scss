@@ -5,7 +5,8 @@
   padding: 0 $spacing-large;
 
   .title-bar__heading {
-    padding: $spacing-xlarge 0;
+    padding: $spacing-xxlarge 0;
+    
     h2 {
       color: $custom-text-black;
       font-weight: 700;
@@ -25,4 +26,14 @@
   min-height: 80vh;
   background-color: $custom-grey-light;
   padding: $spacing-xlarge $spacing-large $spacing-xxxlarge $spacing-large;
+}
+
+.sidebar {
+  min-height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  border-right: 1px solid lighten($color: $custom-grey-dark, $amount: 15);
 }
