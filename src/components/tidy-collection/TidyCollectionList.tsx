@@ -1,37 +1,29 @@
 import TidyCollectionItem from "./TidyCollectionItem";
 
 import "./tidyCollection.scss";
+import { Frontpage } from "../../types/frontpage";
 
-const TidyCollectionList = () => {
+type TidyCollectionListProps = {
+  collection: Frontpage[];
+};
+
+const TidyCollectionList = ({ collection }: TidyCollectionListProps) => {
+  if (collection.length === 0) return null;
+  const collectionLetter = collection[0].title.toString()[0].toUpperCase();
+
   return (
     <div className="tidy-collection-list">
       <div className="tidy-collection-list__item">
-        <h5 className="list-order-tag">A</h5>
+        <h5 className="list-order-tag">{collectionLetter}</h5>
         <div className="row row-cols-md-3">
-          <div className="col">
-            <TidyCollectionItem
-              collectionTitle="Association"
-              collectionIconName="bi-exclamation-triangle"
-            />
-          </div>
-          <div className="col">
-            <TidyCollectionItem
-              collectionTitle="Alerts"
-              collectionIconName="bi-exclamation-triangle"
-            />
-          </div>
-          <div className="col">
-            <TidyCollectionItem
-              collectionTitle="Abbreviations location"
-              collectionIconName="bi-exclamation-triangle"
-            />
-          </div>
-          <div className="col">
-            <TidyCollectionItem
-              collectionTitle="All Natural"
-              collectionIconName="bi-exclamation-triangle"
-            />
-          </div>
+          {collection.map((archivedFrontpage) => (
+            <div className="col">
+              <TidyCollectionItem
+                title={archivedFrontpage.title}
+                icon={archivedFrontpage.icon}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
