@@ -28,7 +28,7 @@ const FrontpageItem = ({ frontpage }: FrontpageItemProps) => {
         <span
           className={`frontpage-item__text-button ${isHovered && "visible"}`}
         >
-          <ArchiveButton handleArchive={someArchiveFunction} />
+          <ArchiveButton handleArchiveButtonAction={someArchiveFunction} />
         </span>
       </div>
     </div>
