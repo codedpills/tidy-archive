@@ -4,26 +4,36 @@ import "./archiveButton.scss";
 
 type ArchiveButtonProps = {
   isArchived?: boolean;
-  handleArchive: () => void;
+  handleArchiveButtonAction: () => void;
 };
 
 const ArchiveButton = ({
   isArchived = false,
-  handleArchive,
+  handleArchiveButtonAction,
 }: ArchiveButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const archivedIconState = isHovered ? "bi-archive" : "bi-archive-fill";
   const defaultIconState = isHovered ? "bi-archive-fill" : "bi-archive";
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const handleClick = () => {
+    handleArchiveButtonAction();
+  };
+
   return (
     <button
       className="archive-button"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={() => {
-        handleArchive();
-      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       <span
         className={`archive-button__icon ${
