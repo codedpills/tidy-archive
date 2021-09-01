@@ -2,7 +2,13 @@ import Titlebar from "./Titlebar";
 import TidyCollectionList from "../tidy-collection/TidyCollectionList";
 import LetterLink from "../letterlink/LetterLink";
 
-const MainArea = () => {
+import { Frontpage } from "../../types/frontpage";
+
+type MainAreaProps = {
+  archivedFrontpages: Frontpage[][];
+};
+
+const MainArea = ({ archivedFrontpages }: MainAreaProps) => {
   return (
     <main className="main-area col-md-9 ms-sm-auto col-lg-10 ">
       <Titlebar title="Archive">
@@ -18,10 +24,9 @@ const MainArea = () => {
       </Titlebar>
       <div className="main-area__content">
         <div className="col-11">
-          <TidyCollectionList />
-          <TidyCollectionList />
-          <TidyCollectionList />
-          <TidyCollectionList />
+          {archivedFrontpages.map((frontpageCollection) => (
+            <TidyCollectionList collection={frontpageCollection} />
+          ))}
         </div>
       </div>
     </main>
