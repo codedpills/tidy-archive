@@ -10,6 +10,31 @@
 
 .tidy-collection-item {
   margin: $spacing-small 0;
+  cursor: pointer;
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .card__icon {
+      width: 20%;
+    }
+    .card__text {
+      width: 60%;
+    }
+    .card__button {
+      width: 10%;
+      visibility: hidden;
+    }
+    .card__button.visible {
+      visibility: visible;
+    }
+  }
+
+  .card.hover {
+    background-color: $custom-grey-dark;
+  }
 
   .collection-icon {
     font-size: 40px;
