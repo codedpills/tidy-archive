@@ -36,4 +36,8 @@
   left: 0;
   overflow-x: hidden;
   border-right: 1px solid lighten($color: $custom-grey-dark, $amount: 15);
+
+  hr {
+    margin: $spacing-xsmall 0;
+  }
 }
