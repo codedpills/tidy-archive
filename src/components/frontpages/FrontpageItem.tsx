@@ -16,11 +16,19 @@ const someArchiveFunction = (): void => {
 const FrontpageItem = ({ frontpage }: FrontpageItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleMouseEnter = (): void => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = (): void => {
+    setIsHovered(false);
+  };
+
   return (
     <div
       className={`frontpage-item ${isHovered && "hover"}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <span className={`frontpage-item__icon ${frontpage.iconName}`}></span>
       <div className="frontpage-item__text">
