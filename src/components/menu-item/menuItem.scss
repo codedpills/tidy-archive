@@ -12,10 +12,6 @@
     border-radius: 10px;
   }
 
-  .active {
-    background-color: $custom-grey-light;
-    border-radius: 10px;
-  }
   .menu-item__icon {
     width: 30%;
     font-size: 15px;
@@ -29,4 +25,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+}
+
+.menu-item.active {
+  background-color: $custom-grey-light;
+  border-radius: 10px;
 }
