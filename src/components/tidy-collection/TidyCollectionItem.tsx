@@ -2,14 +2,11 @@ import { useState } from "react";
 import ArchiveButton from "../archive-button/ArchiveButton";
 
 type TidyCollectionItemProps = {
-  collectionTitle: string;
-  collectionIconName: string;
+  title: string;
+  icon: string;
 };
 
-const TidyCollectionItem = ({
-  collectionTitle,
-  collectionIconName,
-}: TidyCollectionItemProps) => {
+const TidyCollectionItem = ({ title, icon }: TidyCollectionItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -35,13 +32,11 @@ const TidyCollectionItem = ({
         }`}
       >
         <div className="card__icon">
-          <span className={`collection-icon ${collectionIconName}`}></span>
+          <span className={`collection-icon ${icon}`}></span>
         </div>
         <div className="card__text">
           <span className="text-uppercase collection-tag">Tidy collection</span>
-          <span className="text-capitalize collection-title">
-            {collectionTitle}
-          </span>
+          <span className="text-capitalize collection-title">{title}</span>
         </div>
         <div className={`card__button ${isHovered && "visible"}`}>
           <ArchiveButton
