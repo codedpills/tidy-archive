@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.archive-button {
+    background-color: transparent;
+    border: none;
+
+    .archive-button__icon {
+        font-size: 15px;
+        color: $custom-primary-blue;
+    }
+}

@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+.menu-item {
+  padding: 0 $spacing-small;
+  margin: $spacing-xsmall 0;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $custom-grey-light;
+    border-radius: 10px;
+  }
+
+  .menu-item__icon {
+    width: 30%;
+    font-size: 15px;
+  }
+  .menu-item__text {
+    width: 70%;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: $custom-text-grey-dark;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.menu-item.active {
+  background-color: $custom-grey-light;
+  border-radius: 10px;
+}

@@ -1,0 +1,56 @@
+@import "../../styles/variables";
+
+.tidy-collection-list__item {
+  margin: $spacing-medium 0;
+
+  .list-order-tag {
+    font-size: 16px;
+  }
+}
+
+.tidy-collection-item {
+  margin: $spacing-small 0;
+  cursor: pointer;
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .card__icon {
+      width: 20%;
+    }
+    .card__text {
+      width: 60%;
+    }
+    .card__button {
+      width: 10%;
+      visibility: hidden;
+    }
+    .card__button.visible {
+      visibility: visible;
+    }
+  }
+
+  .card.hover {
+    background-color: $custom-grey-dark;
+  }
+
+  .collection-icon {
+    font-size: 40px;
+    color: $custom-primary-blue;
+  }
+  span.collection-tag {
+    display: block;
+    font-size: 12px;
+    color: $custom-text-grey-base;
+  }
+  span.collection-title {
+    display: block;
+    font-size: 16px;
+    color: $custom-primary-blue;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
