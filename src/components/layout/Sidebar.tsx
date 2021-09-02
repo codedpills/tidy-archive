@@ -13,9 +13,10 @@ const someUser = {
 
 type SidebarProps = {
   frontpages: Frontpage[];
+  handleArchive: (id: string) => void;
 };
 
-const Sidebar = ({ frontpages }: SidebarProps) => {
+const Sidebar = ({ frontpages, handleArchive }: SidebarProps) => {
   return (
     <aside className="sidebar col-md-3 col-lg-2 d-flex flex-column flex-shrink-0 p-3 bg-white">
       <nav className="nav flex-column pt-5 pb-3">
@@ -24,7 +25,7 @@ const Sidebar = ({ frontpages }: SidebarProps) => {
         <MenuItem menuIconName="bi-bookmark" menuTitle="templates" />
       </nav>
       <nav className="nav flex-column mb-auto">
-        <FrontpageList frontpages={frontpages} />
+        <FrontpageList frontpages={frontpages} handleArchive={handleArchive} />
       </nav>
       <hr />
       <nav className="nav flex-column">
