@@ -6,24 +6,30 @@ import "./letterlink.scss";
 type LetterLinkProps = {
   letter: string;
   isDisabled?: boolean;
+  isActive: boolean;
+  setActiveLetter: (letter: string) => void;
 };
 
 type LinkState = "default" | "active" | "hover";
 
-const LetterLink = ({ letter, isDisabled }: LetterLinkProps) => {
+const LetterLink = ({
+  letter,
+  isDisabled,
+  isActive,
+  setActiveLetter,
+}: LetterLinkProps) => {
   const [linkState, setLinkState] = useState<LinkState>("default");
-
   const handleMouseEnter = (): void => {
-    if (linkState !== "active" && !isDisabled) setLinkState("hover");
+    if (!isActive && !isDisabled) setLinkState("hover");
   };
 
   const handleMouseLeave = (): void => {
-    if (linkState !== "active") setLinkState("default");
+    if (!isDisabled) setLinkState("default");
   };
 
   const handleClick = (): void => {
     if (isDisabled) return;
-    setLinkState("active");
+    setActiveLetter(letter);
   };
 
   return (
@@ -40,7 +46,11 @@ const LetterLink = ({ letter, isDisabled }: LetterLinkProps) => {
       >
         {letter}
       </Link>
-      <div className={`letter-border letter-border-${linkState}`}></div>
+      <div
+        className={`letter-border letter-border-${
+          isActive ? "active" : linkState
+        }`}
+      ></div>
     </li>
   );
 };
