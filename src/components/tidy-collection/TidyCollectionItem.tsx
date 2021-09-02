@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import ArchiveButton from "../archive-button/ArchiveButton";
 
 type TidyCollectionItemProps = {
@@ -16,7 +17,7 @@ const TidyCollectionItem = ({ title, icon }: TidyCollectionItemProps) => {
     setIsHovered(false);
   };
 
-  const someRestoreFunction = () => {
+  const someRestoreFunction = (id: string) => {
     console.log("restore archived collection!");
   };
 
@@ -42,6 +43,7 @@ const TidyCollectionItem = ({ title, icon }: TidyCollectionItemProps) => {
           <ArchiveButton
             isArchived={true}
             handleArchiveButtonAction={someRestoreFunction}
+            id={"someID"}
           />
         </div>
       </div>
