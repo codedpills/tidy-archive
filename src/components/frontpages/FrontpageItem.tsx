@@ -4,7 +4,7 @@ import ArchiveButton from "../archive-button/ArchiveButton";
 
 type FrontpageItemProps = {
   frontpage: {
-    iconName: string;
+    icon: string;
     title: string;
   };
 };
@@ -30,7 +30,7 @@ const FrontpageItem = ({ frontpage }: FrontpageItemProps) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <span className={`frontpage-item__icon ${frontpage.iconName}`}></span>
+      <span className={`frontpage-item__icon ${frontpage.icon}`}></span>
       <div className="frontpage-item__text">
         <span className="frontpage-item__text-title">{frontpage.title}</span>
         <span
