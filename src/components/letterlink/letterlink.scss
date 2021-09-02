@@ -27,3 +27,8 @@
     background-color: #fff;
   }
 }
+
+.letter-link.disabled {
+  pointer-events: none;
+  opacity: 0.2;
+}
