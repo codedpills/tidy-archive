@@ -2,18 +2,18 @@ import { useState } from "react";
 
 import ArchiveButton from "../archive-button/ArchiveButton";
 
+import { Frontpage } from "../../types/frontpage";
+
 type FrontpageItemProps = {
-  frontpage: {
-    icon: string;
-    title: string;
-  };
+  frontpage: Frontpage;
+  handleArchive: (id: string) => void;
 };
 
 const someArchiveFunction = (): void => {
   console.log("archived!");
 };
 
-const FrontpageItem = ({ frontpage }: FrontpageItemProps) => {
+const FrontpageItem = ({ frontpage, handleArchive }: FrontpageItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = (): void => {
@@ -36,7 +36,10 @@ const FrontpageItem = ({ frontpage }: FrontpageItemProps) => {
         <span
           className={`frontpage-item__text-button ${isHovered && "visible"}`}
         >
-          <ArchiveButton handleArchiveButtonAction={someArchiveFunction} />
+          <ArchiveButton
+            handleArchiveButtonAction={handleArchive}
+            id={frontpage.id}
+          />
         </span>
       </div>
     </div>

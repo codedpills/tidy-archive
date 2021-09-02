@@ -6,9 +6,10 @@ import "./frontpage.scss";
 
 type FrontpageListProps = {
   frontpages: Frontpage[];
+  handleArchive: (id: string) => void;
 };
 
-const FrontpageList = ({ frontpages }: FrontpageListProps) => {
+const FrontpageList = ({ frontpages, handleArchive }: FrontpageListProps) => {
   return (
     <div className="fontpage-list">
       <div className="frontpage-list__header">
@@ -19,7 +20,11 @@ const FrontpageList = ({ frontpages }: FrontpageListProps) => {
       </div>
       <div className="frontpage-list__items">
         {frontpages.map((frontpage) => (
-          <FrontpageItem key={frontpage.id} frontpage={frontpage} />
+          <FrontpageItem
+            key={frontpage.id}
+            frontpage={frontpage}
+            handleArchive={handleArchive}
+          />
         ))}
       </div>
     </div>

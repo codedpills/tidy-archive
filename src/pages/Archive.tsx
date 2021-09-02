@@ -54,10 +54,64 @@ const Archive = () => {
     });
   }, []);
 
+  const handleArchive = (id: string) => {
+    const archivedFrontpage = state.frontpages.find(
+      (frontpage) => frontpage.id === id
+    );
+    const updatedFrontpages = state.frontpages.filter(
+      (frontpage) => frontpage.id !== id
+    );
+    if (!archivedFrontpage) {
+      return;
+    }
+    const archivedFrontpageIndex =
+      archivedFrontpage.title.toLowerCase().charCodeAt(0) - 97;
+    const updatedArchived = state.archived.map((archived, idx) => {
+      if (idx === archivedFrontpageIndex) {
+        return [...archived, archivedFrontpage];
+      }
+      return archived;
+    });
+
+    setState({
+      ...state,
+      archived: updatedArchived,
+      frontpages: updatedFrontpages,
+    });
+  };
+
+  const handleRestore = (id: string, collectionLetter: string) => {
+    const index = collectionLetter.toLowerCase().charCodeAt(0) - 97;
+    const archivedFrontpage = state.archived[index].find(
+      (archived) => archived.id === id
+    );
+    if (!archivedFrontpage) return;
+    const updatedArchived = state.archived[index].filter(
+      (archived) => archived.id !== id
+    );
+    const updatedFrontpages = [...state.frontpages, archivedFrontpage];
+    setState({
+      ...state,
+      archived: [
+        ...state.archived.slice(0, index),
+        updatedArchived,
+        ...state.archived.slice(index + 1),
+      ],
+      frontpages: updatedFrontpages,
+    });
+  };
+
   return (
     <PageContainer
-      side={<Sidebar frontpages={state.frontpages} />}
-      main={<MainArea archivedFrontpages={state.archived} />}
+      side={
+        <Sidebar frontpages={state.frontpages} handleArchive={handleArchive} />
+      }
+      main={
+        <MainArea
+          archivedFrontpages={state.archived}
+          handleRestore={handleRestore}
+        />
+      }
     />
   );
 };

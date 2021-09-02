@@ -4,12 +4,14 @@ import "./archiveButton.scss";
 
 type ArchiveButtonProps = {
   isArchived?: boolean;
-  handleArchiveButtonAction: () => void;
+  handleArchiveButtonAction: (id: string) => void;
+  id: string;
 };
 
 const ArchiveButton = ({
   isArchived = false,
   handleArchiveButtonAction,
+  id
 }: ArchiveButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -25,7 +27,7 @@ const ArchiveButton = ({
   };
 
   const handleClick = () => {
-    handleArchiveButtonAction();
+    handleArchiveButtonAction(id);
   };
 
   return (

@@ -1,12 +1,15 @@
 import { useState } from "react";
+
 import ArchiveButton from "../archive-button/ArchiveButton";
 
 type TidyCollectionItemProps = {
   title: string;
   icon: string;
+  id: string;
+  handleRestore: (id: string) => void;
 };
 
-const TidyCollectionItem = ({ title, icon }: TidyCollectionItemProps) => {
+const TidyCollectionItem = ({ title, icon, id, handleRestore }: TidyCollectionItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -14,10 +17,6 @@ const TidyCollectionItem = ({ title, icon }: TidyCollectionItemProps) => {
   };
   const handleMouseLeave = () => {
     setIsHovered(false);
-  };
-
-  const someRestoreFunction = () => {
-    console.log("restore archived collection!");
   };
 
   return (
@@ -41,7 +40,8 @@ const TidyCollectionItem = ({ title, icon }: TidyCollectionItemProps) => {
         <div className={`card__button ${isHovered && "visible"}`}>
           <ArchiveButton
             isArchived={true}
-            handleArchiveButtonAction={someRestoreFunction}
+            handleArchiveButtonAction={handleRestore}
+            id={id}
           />
         </div>
       </div>

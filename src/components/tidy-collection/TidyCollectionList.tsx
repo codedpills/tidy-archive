@@ -5,11 +5,16 @@ import { Frontpage } from "../../types/frontpage";
 
 type TidyCollectionListProps = {
   collection: Frontpage[];
+  handleRestore: (id: string, collectionLetter: string) => void;
 };
 
-const TidyCollectionList = ({ collection }: TidyCollectionListProps) => {
+const TidyCollectionList = ({ collection, handleRestore }: TidyCollectionListProps) => {
   if (collection.length === 0) return null;
   const collectionLetter = collection[0].title.toString()[0].toUpperCase();
+
+  const handleRestoreClick = (id: string) => {
+    handleRestore(id, collectionLetter);
+  }
 
   return (
     <div className="tidy-collection-list">
@@ -21,6 +26,8 @@ const TidyCollectionList = ({ collection }: TidyCollectionListProps) => {
               <TidyCollectionItem
                 title={archivedFrontpage.title}
                 icon={archivedFrontpage.icon}
+                id={archivedFrontpage.id}
+                handleRestore={handleRestoreClick}
               />
             </div>
           ))}
