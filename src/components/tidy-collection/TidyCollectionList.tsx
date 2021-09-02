@@ -17,7 +17,7 @@ const TidyCollectionList = ({ collection }: TidyCollectionListProps) => {
         <h5 className="list-order-tag">{collectionLetter}</h5>
         <div className="row row-cols-md-3">
           {collection.map((archivedFrontpage) => (
-            <div className="col">
+            <div className="col" key={archivedFrontpage.id}>
               <TidyCollectionItem
                 title={archivedFrontpage.title}
                 icon={archivedFrontpage.icon}
