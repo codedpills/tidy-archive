@@ -36,7 +36,7 @@ const LetterLink = ({ letter, isDisabled }: LetterLinkProps) => {
         activeClass="active"
         to={letter}
         spy={true}
-        offset={-20}
+        offset={-200}
       >
         {letter}
       </Link>
