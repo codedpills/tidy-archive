@@ -1,13 +1,14 @@
 import FrontpageItem from "./FrontpageItem";
 
+import { Frontpage } from "../../types/frontpage";
+
 import "./frontpage.scss";
 
-const someFrontpage = {
-    title: "Some frontpage",
-    iconName: "bi-check2-square",
-}
+type FrontpageListProps = {
+  frontpages: Frontpage[];
+};
 
-const FrontpageList = () => {
+const FrontpageList = ({ frontpages }: FrontpageListProps) => {
   return (
     <div className="fontpage-list">
       <div className="frontpage-list__header">
@@ -17,13 +18,9 @@ const FrontpageList = () => {
         </button>
       </div>
       <div className="frontpage-list__items">
-        <FrontpageItem frontpage={someFrontpage} />
-        <FrontpageItem frontpage={someFrontpage} />
-        <FrontpageItem frontpage={someFrontpage} />
-        <FrontpageItem frontpage={someFrontpage} />
-        <FrontpageItem frontpage={someFrontpage} />
-        <FrontpageItem frontpage={someFrontpage} />
-        <FrontpageItem frontpage={someFrontpage} />
+        {frontpages.map((frontpage) => (
+          <FrontpageItem key={frontpage.id} frontpage={frontpage} />
+        ))}
       </div>
     </div>
   );
