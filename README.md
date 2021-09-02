@@ -7,9 +7,9 @@ Demo link: https://tidy-archive.vercel.app/
 - Archive frontpages functionality
 - Restore frontpages functionality
 - Order archived frontpages by first letter
+- Goto letter functionality
 
 ## Yet to be completed:
-- Goto letter functionality
 - Write test
 - Hookup graphql backend
 
