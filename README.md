@@ -4,13 +4,12 @@ Demo link: https://tidy-archive.vercel.app/
 ## Completed: 
 - Individual UI components
 - Complete Archive page (based on Figma mockup) displaying static content
-- Display sample frontpages from the state
-- Display sample archived frontpages from the state, sorted by first letter
-
-## Yet to be completed:
 - Archive frontpages functionality
 - Restore frontpages functionality
-- Goto letter feature
+- Order archived frontpages by first letter
+
+## Yet to be completed:
+- Goto letter functionality
 - Write test
 - Hookup graphql backend
 
