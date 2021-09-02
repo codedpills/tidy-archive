@@ -2,6 +2,8 @@ import FrontpageList from "../frontpages/FrontpageList";
 import MenuItem from "../menu-item/MenuItem";
 import Profile from "../profile/Profile";
 
+import { Frontpage } from "../../types/frontpage";
+
 const someUser = {
   name: "Ahmed Zaky",
   imageUrl:
@@ -9,7 +11,11 @@ const someUser = {
   company: "Tidy",
 };
 
-const Sidebar = () => {
+type SidebarProps = {
+  frontpages: Frontpage[];
+};
+
+const Sidebar = ({ frontpages }: SidebarProps) => {
   return (
     <aside className="sidebar col-md-3 col-lg-2 d-flex flex-column flex-shrink-0 p-3 bg-white">
       <nav className="nav flex-column pt-5 pb-3">
@@ -18,7 +24,7 @@ const Sidebar = () => {
         <MenuItem menuIconName="bi-bookmark" menuTitle="templates" />
       </nav>
       <nav className="nav flex-column mb-auto">
-        <FrontpageList />
+        <FrontpageList frontpages={frontpages} />
       </nav>
       <hr />
       <nav className="nav flex-column">
