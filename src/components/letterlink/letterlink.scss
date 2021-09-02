@@ -4,9 +4,10 @@
   list-style: none;
   margin-right: $spacing-small;
 
-  a {
+  .scroll-link {
     color: $custom-text-grey-dark;
     font-size: 16px;
+    cursor: pointer;
 
     &:hover {
       color: $custom-text-grey-dark;
@@ -26,4 +27,9 @@
   .letter-border-default {
     background-color: #fff;
   }
+}
+
+.letter-link.disabled {
+  pointer-events: none;
+  opacity: 0.2;
 }

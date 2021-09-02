@@ -9,10 +9,6 @@ type FrontpageItemProps = {
   handleArchive: (id: string) => void;
 };
 
-const someArchiveFunction = (): void => {
-  console.log("archived!");
-};
-
 const FrontpageItem = ({ frontpage, handleArchive }: FrontpageItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
 

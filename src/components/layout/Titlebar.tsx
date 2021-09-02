@@ -5,7 +5,7 @@ type TitlebarProps = {
 
 const Titlebar = ({ title = "Heading", children }: TitlebarProps) => {
   return (
-    <div className="title-bar">
+    <div className="title-bar sticky-top">
       <div className="title-bar__heading">
         <h2>{title}</h2>
       </div>
