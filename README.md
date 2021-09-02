@@ -8,10 +8,10 @@ Demo link: https://tidy-archive.vercel.app/
 - Restore frontpages functionality
 - Order archived frontpages by first letter
 - Goto letter functionality
+- Hookup graphql backend
 
 ## Yet to be completed:
 - Write test
-- Hookup graphql backend
 
 
 _________________________________________________________
