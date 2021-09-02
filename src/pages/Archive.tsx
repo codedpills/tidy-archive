@@ -62,7 +62,7 @@ const Archive = () => {
       (frontpage) => frontpage.id !== id
     );
     if (!archivedFrontpage) {
-      throw new Error("Frontpage with id not found");
+      return;
     }
     const archivedFrontpageIndex =
       archivedFrontpage.title.toLowerCase().charCodeAt(0) - 97;
