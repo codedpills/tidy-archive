@@ -54,9 +54,37 @@ const Archive = () => {
     });
   }, []);
 
+  const handleArchive = (id: string) => {
+    const archivedFrontpage = state.frontpages.find(
+      (frontpage) => frontpage.id === id
+    );
+    const updatedFrontpages = state.frontpages.filter(
+      (frontpage) => frontpage.id !== id
+    );
+    if (!archivedFrontpage) {
+      throw new Error("Frontpage with id not found");
+    }
+    const archivedFrontpageIndex =
+      archivedFrontpage.title.toLowerCase().charCodeAt(0) - 97;
+    const updatedArchived = state.archived.map((archived, idx) => {
+      if (idx === archivedFrontpageIndex) {
+        return [...archived, archivedFrontpage];
+      }
+      return archived;
+    });
+
+    setState({
+      ...state,
+      archived: updatedArchived,
+      frontpages: updatedFrontpages,
+    });
+  };
+
   return (
     <PageContainer
-      side={<Sidebar frontpages={state.frontpages} />}
+      side={
+        <Sidebar frontpages={state.frontpages} handleArchive={handleArchive} />
+      }
       main={<MainArea archivedFrontpages={state.archived} />}
     />
   );
