@@ -17,7 +17,11 @@ const MainArea = ({ archivedFrontpages, handleRestore }: MainAreaProps) => {
           <div className="alphabet-sort">
             <ul className="alphabet-sort__list">
               {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter, idx) => (
-                <LetterLink key={idx} letter={letter} />
+                <LetterLink
+                  key={idx}
+                  letter={letter}
+                  isDisabled={archivedFrontpages[idx].length === 0}
+                />
               ))}
             </ul>
           </div>
