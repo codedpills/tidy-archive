@@ -80,12 +80,38 @@ const Archive = () => {
     });
   };
 
+  const handleRestore = (id: string, collectionLetter: string) => {
+    const index = collectionLetter.toLowerCase().charCodeAt(0) - 97;
+    const archivedFrontpage = state.archived[index].find(
+      (archived) => archived.id === id
+    );
+    if (!archivedFrontpage) return;
+    const updatedArchived = state.archived[index].filter(
+      (archived) => archived.id !== id
+    );
+    const updatedFrontpages = [...state.frontpages, archivedFrontpage];
+    setState({
+      ...state,
+      archived: [
+        ...state.archived.slice(0, index),
+        updatedArchived,
+        ...state.archived.slice(index + 1),
+      ],
+      frontpages: updatedFrontpages,
+    });
+  };
+
   return (
     <PageContainer
       side={
         <Sidebar frontpages={state.frontpages} handleArchive={handleArchive} />
       }
-      main={<MainArea archivedFrontpages={state.archived} />}
+      main={
+        <MainArea
+          archivedFrontpages={state.archived}
+          handleRestore={handleRestore}
+        />
+      }
     />
   );
 };
