@@ -10,7 +10,7 @@ const sampleFrontpages = [
   { id: "1", title: "Folder 1", icon: "bi-folder" },
   { id: "2", title: "Folder 2", icon: "bi-folder-x" },
   { id: "3", title: "Cash 1", icon: "bi-cash" },
-  { id: "4", title: "Calender 2", icon: "bi-calender2" },
+  { id: "4", title: "Calender 2", icon: "bi-calendar2" },
   { id: "5", title: "Cloud 1", icon: "bi-cloud-minus" },
   { id: "6", title: "Emoji 5", icon: "bi-emoji-smile" },
 ];
@@ -42,17 +42,21 @@ const Archive = () => {
   useEffect(() => {
     const sortedArchived = Array(26)
       .fill(0)
-      .map((e) => new Array<Frontpage>());
+      .map((i) => new Array<Frontpage>());
     sampleArchived.forEach((archivedFrontpage: Frontpage) => {
       const index = archivedFrontpage.title.toLowerCase().charCodeAt(0) - 97;
       sortedArchived[index].push(archivedFrontpage);
     });
-    setState({ ...state, archived: sortedArchived });
+    setState({
+      ...state,
+      archived: sortedArchived,
+      frontpages: sampleFrontpages,
+    });
   }, []);
 
   return (
     <PageContainer
-      side={<Sidebar />}
+      side={<Sidebar frontpages={state.frontpages} />}
       main={<MainArea archivedFrontpages={state.archived} />}
     />
   );
