@@ -9,7 +9,12 @@ type TidyCollectionItemProps = {
   handleRestore: (id: string) => void;
 };
 
-const TidyCollectionItem = ({ title, icon, id, handleRestore }: TidyCollectionItemProps) => {
+const TidyCollectionItem = ({
+  title,
+  icon,
+  id,
+  handleRestore,
+}: TidyCollectionItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -31,7 +36,7 @@ const TidyCollectionItem = ({ title, icon, id, handleRestore }: TidyCollectionIt
         }`}
       >
         <div className="card__icon">
-          <span className={`collection-icon ${icon}`}></span>
+          <span className={`collection-icon ${icon}`}>{icon}</span>
         </div>
         <div className="card__text">
           <span className="text-uppercase collection-tag">Tidy collection</span>
