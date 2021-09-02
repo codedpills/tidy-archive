@@ -26,7 +26,9 @@ const FrontpageItem = ({ frontpage, handleArchive }: FrontpageItemProps) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <span className={`frontpage-item__icon ${frontpage.icon}`}></span>
+      <span className={`frontpage-item__icon ${frontpage.icon}`}>
+        {frontpage.icon}
+      </span>
       <div className="frontpage-item__text">
         <span className="frontpage-item__text-title">{frontpage.title}</span>
         <span
