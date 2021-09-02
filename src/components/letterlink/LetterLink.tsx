@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-scroll";
 
 import "./letterlink.scss";
 
@@ -25,19 +26,20 @@ const LetterLink = ({ letter, isDisabled }: LetterLinkProps) => {
     setLinkState("active");
   };
 
-  const handleBlur = (): void => {
-    setLinkState("default");
-  };
-
   return (
-    <li
-      className={`letter-link ${isDisabled && "disabled"}`}
-      onClick={handleClick}
-      onBlur={handleBlur}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <a href="/">{letter}</a>
+    <li className={`letter-link ${isDisabled && "disabled"}`}>
+      <Link
+        className="scroll-link"
+        onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        activeClass="active"
+        to={letter}
+        spy={true}
+        offset={-20}
+      >
+        {letter}
+      </Link>
       <div className={`letter-border letter-border-${linkState}`}></div>
     </li>
   );
