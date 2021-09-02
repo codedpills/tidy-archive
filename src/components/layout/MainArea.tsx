@@ -24,8 +24,8 @@ const MainArea = ({ archivedFrontpages }: MainAreaProps) => {
       </Titlebar>
       <div className="main-area__content">
         <div className="col-11">
-          {archivedFrontpages.map((frontpageCollection) => (
-            <TidyCollectionList collection={frontpageCollection} />
+          {archivedFrontpages.map((frontpageCollection, idx) => (
+            <TidyCollectionList collection={frontpageCollection} key={idx} />
           ))}
         </div>
       </div>
