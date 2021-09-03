@@ -23,6 +23,7 @@ const FrontpageItem = ({ frontpage, handleArchive }: FrontpageItemProps) => {
   return (
     <div
       className={`frontpage-item ${isHovered && "hover"}`}
+      data-test="frontpage-item"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -33,6 +34,7 @@ const FrontpageItem = ({ frontpage, handleArchive }: FrontpageItemProps) => {
         <span className="frontpage-item__text-title">{frontpage.title}</span>
         <span
           className={`frontpage-item__text-button ${isHovered && "visible"}`}
+          data-test="frontpage-item__text-button"
         >
           <ArchiveButton
             handleArchiveButtonAction={handleArchive}

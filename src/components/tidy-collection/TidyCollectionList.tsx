@@ -17,7 +17,7 @@ const TidyCollectionList = ({ collection, handleRestore }: TidyCollectionListPro
   }
 
   return (
-    <div className="tidy-collection-list">
+    <div className="tidy-collection-list" data-test="tidy-collection-list">
       <div className="tidy-collection-list__item" id={collectionLetter}>
         <h5 className="list-order-tag">{collectionLetter}</h5>
         <div className="row row-cols-md-3">

@@ -33,6 +33,7 @@ const ArchiveButton = ({
   return (
     <button
       className="archive-button"
+      data-test="archive-button"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
