@@ -18,7 +18,7 @@ const FrontpageList = ({ frontpages, handleArchive }: FrontpageListProps) => {
           <span className="bi-plus"></span>
         </button>
       </div>
-      <div className="frontpage-list__items">
+      <div className="frontpage-list__items" data-test="frontpage-list-items">
         {frontpages.map((frontpage) => (
           <FrontpageItem
             key={frontpage.id}
