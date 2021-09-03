@@ -9,9 +9,10 @@ Demo link: https://tidy-archive.vercel.app/
 - Order archived frontpages by first letter
 - Goto letter functionality
 - Hookup graphql backend
+- Write test
 
 ## Yet to be completed:
-- Write test
+- N/A
 
 
 _________________________________________________________
